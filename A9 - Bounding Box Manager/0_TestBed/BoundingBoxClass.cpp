@@ -76,8 +76,6 @@ void BoundingBoxClass::GenerateOrientedBoundingBox(String a_sInstanceName)
 		m_v3Min2 = l2Vertices[0];
 		for(unsigned int nVertex = 1; nVertex < nVertices; nVertex++)
 		{
-			
-			
 				//m_v3Centroid += lVertices[nVertex];
 				if(m_v3Min.x > lVertices[nVertex].x)
 					m_v3Min.x = lVertices[nVertex].x;
@@ -130,7 +128,6 @@ void BoundingBoxClass::GenerateAxisAlignedBoundingBox(matrix4 a_m4ModeltoWorld)
 		{
 			m_v3AABBSize.x = PointA.x;
 		}
-
 	
 		else if(PointB.x > PointA.x && PointB.x > PointC.x && PointB.x > PointD.x)
 		{
@@ -168,27 +165,6 @@ void BoundingBoxClass::GenerateAxisAlignedBoundingBox(matrix4 a_m4ModeltoWorld)
 			m_v3AABBSize.y = PointD.y;
 		}
 
-		//Check PointC  against other points
-		if(PointC.x > PointA.x && PointC.x > PointB.x && PointC.x > PointD.x)
-		{
-
-		}
-
-		else if(PointC.y > PointA.y && PointC.y > PointB.y && PointC.y > PointD.y)
-		{
-
-		}
-
-		//Check PointD against other points
-		if(PointD.x > PointA.x && PointD.x > PointB.x && PointD.x > PointC.x)
-		{
-
-		}
-
-		else if(PointD.y > PointA.y && PointD.y > PointB.y && PointD.y > PointC.y)
-		{
-
-		}
     }
 	
 }
@@ -200,5 +176,5 @@ void BoundingBoxClass::AddBoxToRenderList(matrix4 a_m4ModelToWorld, vector3 a_vC
 	if(a_bRenderCentroid)
 		pMeshMngr->AddAxisToQueue(a_m4ModelToWorld * glm::translate(m_v3Centroid));
 	pMeshMngr->AddCubeToQueue(a_m4ModelToWorld * glm::translate(m_v3Centroid) * glm::scale(m_v3Size), a_vColor, MERENDER::WIRE);
-	pMeshMngr->AddCubeToQueue(a_m4ModelToWorld * g lm::translate(m_v3Centroid) * glm::scale(vector3(2.0f)), a_vColor, MERENDER::WIRE);
+	pMeshMngr->AddCubeToQueue(a_m4ModelToWorld * glm::translate(m_v3Centroid) * glm::scale(vector3(2.0f)), a_vColor, MERENDER::WIRE);
 }
