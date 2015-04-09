@@ -15,7 +15,10 @@ class BoundingBoxClass
 	vector3 m_v3Min;//Collection of minimal components of the model
 	vector3 m_v3Max;//Collection of maximum componets of the model
 	vector3 m_v3Size;//Size of the Box
+	vector3 m_v3AABBSize; //Size of the AABB
 	String m_sName;//Name of the BoundingBox (to relate to the instance)
+	vector3 m_v3Min2;//Collection of minimal components of the model for AABB
+	vector3 m_v3Max2;//Collection of maximum componets of the model for AABB
 
 public:
 	/* Constructor */
@@ -78,7 +81,11 @@ public:
 	*/
 	void AddBoxToRenderList(matrix4 a_mModelToWorld, vector3 a_vColor, bool a_bRenderCentroid = false);
 
-	
+
+	vector3 aabbSize;
+	vector3 aabbCenter;
+	vector3 aabbColor;
+
 private:
 	/* Releases the object from memory */
 	void Release(void);

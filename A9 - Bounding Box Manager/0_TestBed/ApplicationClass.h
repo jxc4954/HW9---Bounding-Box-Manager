@@ -19,7 +19,6 @@ class ApplicationClass
 	bool m_bArcBall;// Arcball flag
 
 	BoundingBoxManagerSingleton* m_pBBMngr; //Bounding Box manager
-	BoundingBoxManagerSingleton* m_pAABBMngr; // Axis-Aligned Bounding Box Manager
 	String m_sSelectedObject;
 
 	matrix4 m_m4SelectedObject;//Creeper Model Matrix
